@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Treetech | Cadastro de alarmes</title>
+
+    <link rel="icon" type="image/png" href="./favicon.ico" />
+
+    <link rel="stylesheet" href="../public/css/styles.css">
+    <link rel="stylesheet" href="../public/css/alarmes.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <a class="home" href="/"><img src="public/assets/logo.png" alt=" logo"></a>
+
+            <nav>
+                <ul>
+                    <li><a href="/equipamentos.html">Equipamentos</a></li>
+                    <li><a href="/alarmes.html" class="active">Alarmes</a></li>
+                    <li><a href="/atuados.html">Alarmes atuados</a></li>
+                    <li><a href="/index.html">Sair</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="form">
+            <form id="form-alarmes">
+                <div class="div-flex-row">
+                    <div class="animar-input">
+                        <input type="text" required="true" maxlength="32" autocomplete="off" data-val="true"
+                            data-val-required="The Equipamento field is required." id="txt-equipamento">
+                        <a id="btn-busca"><img src="public/assets/magnifier.png" alt=""></a>
+                        <label>Equipamento</label>
+                    </div>
+                    <div class="animar-input">
+                        <select required="true" autocomplete="off" data-val="true"
+                            data-val-required="The Classificação field is required." id="sel-classificacao">
+                            <option selected disabled hidden></option>
+                            <option value="1">Baixo</option>
+                            <option value="2">Medio</option>
+                            <option value="3">Alto</option>
+                        </select>
+                        <label>Classificação</label>
+                    </div>
+                </div>
+
+                <div class="div-flex-row">
+                    <div class="animar-input">
+                        <input type="text" required="true" maxlength="32" autocomplete="off" data-val="true"
+                            data-val-required="The Descrição field is required." id="txt-descricao">
+                        <label>Descrição</label>
+                    </div>
+                </div>
+
+                <div class="button-container">
+                    <button class="btn-geral btn-secondary" type="button" id="btn-limpar">Limpar</button>
+                    <button class="btn-geral btn-secondary" type="submit" id="btn-gravar">Gravar</button>
+                </div>
+            </form>
+        </div>
+
+        <footer>
+            <p>Todos direitos reservados, nome empresa.</p>
+        </footer>
+    </div>
+
+    <script src="../public/js/scripts.js"></script>
+    <script src="../public/js/alarmes.js"></script>
+</body>
+
+</html>
