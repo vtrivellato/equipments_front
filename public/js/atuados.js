@@ -17,7 +17,7 @@ function carregaAlarmes(e) {
     let filtros = []
 
     if (equipamento) {
-        filtros.push(`chassi=${equipamento}`)
+        filtros.push(`nrserie=${equipamento}`)
     }
 
     if (filtros.length > 0) {
@@ -38,16 +38,17 @@ function carregaAlarmes(e) {
                 for (item of data) {
                     let row = '<tr>'
 
-                    row += `<td>${item.chassi}</td>`
-                    row += `<td style="text-align: right;">${item.km}</td>`
-                    row += `<td style="text-align: center;">${formataData(new Date(item.dataRevisao))}</td>`
-                    row += `<td style="text-align: right;">${item.valor.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</td>`
+                    row += `<td>${item.descricaoEquipamento}</td>`
+                    row += `<td>${item.descricaoAlarme}</td>`
+                    row += `<td style="text-align: center;">${item.status ? 'Ativo' : 'Inativo'}</td>`
+                    row += `<td style="text-align: center;">${formataData(new Date(item.dataEntrada))}</td>`
+                    row += `<td style="text-align: center;">${formataData(new Date(item.dataSaida))}</td>`
                     row += '</tr>'
 
                     table.innerHTML += row
                 }
             } else {
-                alert('Não foi possível carregar as revisões. Tente novamente em instantes.')
+                alert('Não foi possível carregar os alarmes atuados. Tente novamente em instantes.')
             }
         })
         .catch(error => {
